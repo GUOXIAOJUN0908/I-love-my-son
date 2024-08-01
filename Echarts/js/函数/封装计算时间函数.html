@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.用户输入
+    let second = +prompt('请输入秒数：')
+    //2。函数封装
+    function gettime(t) {
+      h = parseInt(second / 60 / 60 % 24)
+      m = parseInt(second / 60 % 60)
+      s = parseInt(second % 60)
+      h < 10 ? '0' + h : h
+      m < 10 ? '0' + m : m
+      s < 10 ? '0' + s : s
+      console.log(h, m, s)
+    }
+    gettime(second)
+  </script>
+</body>
+
+</html>

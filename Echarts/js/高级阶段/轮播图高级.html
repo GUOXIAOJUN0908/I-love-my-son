@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+      width: 560px;
+      height: 400px;
+      overflow: hidden;
+      /*超出的部分会被隐藏*/
+      background-color: pink;
+    }
+
+    .slider_wrapper {
+      width: 100%;
+      height: 320px;
+    }
+
+    .slider_wrapper img {
+      width: 100%;
+      height: 100%;
+      /* 图片转换为块级元素 */
+      display: block;
+    }
+
+    .slider_footer {
+      height: 80px;
+      background-color: rgb(100, 67, 68);
+      /* 底部文字和左边留点距离 */
+      padding: 12px 12px 0 12px;
+      position: relative;
+    }
+
+    .solider-footer .toggle {
+      position: absolute;
+      right: 0;
+      top: 12px;
+      /* flex布局 */
+      /* display: flex; */
+    }
+
+    .sslider_footer.toggle button {
+      margin-right: 12px;
+      width: 28px;
+      height: 28px;
+      appearance: none;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .slider_footer.toggle button:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .slider_footer p {
+      margin: 0;
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .slider_indicator {
+      margin: 0;
+      padding: 0;
+      /* 把小li标签前面的点给去掉 */
+      list-style: none;
+      /* flex布局,里面的小li有序摆放,无需浮动 */
+      display: flex;
+      /* 设置主轴上的子元素的排列方式 默认flex-start */
+      justify-content: flex-start;
+      /* 侧轴上子元素的排列方式 */
+      align-items: center;
+    }
+
+    .slider_indicator li {
+      width: 8px;
+      height: 8px;
+      margin: 4px;
+      border-radius: 50%;
+      background: #fff;
+      /* 透明度 */
+      opacity: 0.4;
+      /* 鼠标 */
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="slider">
+    <div class="slider_wrapper">
+      <img src="/DOM/image/fireblock1.png" alt="">
+    </div>
+    <div class="slider_footer">
+      <p>第一张</p>
+    </div>
+    <ul class="slider_indicator">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <div class="toogle">
+      <button class="prev">&lt;</button>
+      <button class="next">&gt;</button>
+
+    </div>
+
+    <script>
+      //创建数组
+      const sliderData = [
+        { url: '/DOM/image/block3.png', title: '图片3', color: 'rgb(100,67,68)' },
+        { url: '/DOM/image/block4.png', title: '图片4', color: 'rgb(100,67,68)' },
+        { url: '/DOM/image/fireblock1.png', title: '计算器', color: 'rgb(100,67,68)' },
+        { url: '/DOM/image/fireblock2.png', title: '省钱', color: 'rgb(100,67,68)' },
+      ]
+      //生成随机数
+      // function random(M, N) {
+      //   return Math.floor(Math.random() * (M - N+1) + N)
+      // }
+      const random = parseInt(Math.random() * sliderData.length)
+      console.log(sliderData[random])
+      //把标签内容渲染到css
+      const img = document.querySelector('.slider_wrapper img')
+      //修改图片路径
+      img.src = sliderData[random].url
+      //修改p
+      const p = document.querySelector('.slider_footer p')
+      p.innerHTML = sliderData[random].title
+      //修改颜色
+      const footer = document.querySelector('.slider_footer')
+      footer.style.background = sliderData[random].color
+      //修改li
+      const li = document.querySelector(`.slider_indicator li:nth-child(${random + 1})`)
+      li.classList('actuve')
+
+    </script>
+</body>

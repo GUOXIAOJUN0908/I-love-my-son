@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let bill = {
+      orgid: '1087',
+      name: '大陆方舟',
+      bill_cycle: 'monthly',
+      'start_date': '2024-03-01'//这种带字符串的属性，后面查询的时候，用【】的方式
+    }
+    //查询对象属性
+    // console.log(bill.name)
+    // //增加对象属性
+    // bill.amount = 100
+    // console.log(bill.amount)
+    // //删除对象属性--了解一下；开发中不允许这个操作
+    // delete bill.amount
+
+    // //修改对象属性
+    // bill.amount = 200
+    // console.log(bill.amount)
+    // //没有就是新增，有就是改
+
+    // console.log(['start_date'])
+
+    for (k in bill) {
+      console.log(k)
+      console.log(bill[k])
+    }
+
+  </script>
+</body>
+
+</html>

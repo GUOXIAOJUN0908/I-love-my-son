@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      color: black;
+    }
+
+    .box1 {
+      color: red;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">文字</div>
+  <script>
+    //获取元素
+    const box = document.querySelector('.box')
+    //修改,不加点，因为是class 
+    box.classList.add('active')
+
+    box.classList.remove('box')
+    //切换类， 有就删掉，没有就加上
+    box.classList.toggle('active')
+  </script>
+</body>
+
+</html>
