@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text">
+  <!-- 要实现的功能是我输入回车键，就可以监听到这个事件 -->
+  <script>
+    const a = document.querySelector('input')
+    a.addEventListener('keyup', function (e) {
+      if (e.key === 'Enter') {
+        console.log('摁下了回车键')
+      }
+    })
+  </script>
+</body>
+
+</html>

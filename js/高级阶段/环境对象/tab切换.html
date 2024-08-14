@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="tab">
+    <div class="tab-nav">
+      <h3>每日特价</h3>
+      <ul>
+        <!-- href="javascript:;" 是一种常见的做法，
+        用于指定一个空的 JavaScript 代码块。这种链接通常不会导致页面跳转 -->
+        <li class="active"><a href="javascript:;">精选</a></li>
+        <li><a href="javascript:;">日式面包</a></li>
+        <li><a href="javascript:;">法式面包</a></li>
+        <li><a href="javascript:;">墨西哥面包</a></li>
+      </ul>
+    </div>
+    <div class="tab-content">
+      <div class="item active"><img src="/高级阶段/环境对象/img/精选1.png" alt=""></div>
+      <div class="item"><img src="/高级阶段/环境对象/img/精选2.png" alt=""></div>
+      <div class="item"><img src="/高级阶段/环境对象/img/精选3.png" alt=""></div>
+      <div class="item"><img src="/高级阶段/环境对象/img/精选4.png" alt=""></div>
+    </div>
+  </div>
+  <script>
+    const as = document.querySelectorAll('.tab-nav a')
+    for (i = 0; i < as.length; i++) {
+      as[i].addEventListener('mouseenter', function () {
+        //console.log('鼠标经过')
+        document.querySelector('.tab-nav .active').classList.remove('active')
+        this.classList.add('active')
+      })
+    }
+    document.querySelector('.tab-content .active').classList.remove('active')
+    document.querySelector('.tab-content .item:nth-child(2)').classList.add('active')
+  </script>
+</body>
+
+</html>

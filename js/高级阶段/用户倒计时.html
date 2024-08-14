@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <textarea name="" id="">
+    我们重视您的隐私和数据安全。我们承诺保护您的个人信息，并严格遵守隐私政策。请参阅我们的 隐私政策 了解更多详细信息。
+    需要帮助？
+    如果您在注册过程中遇到任何问题或需要帮助，请随时联系我们的 客服支持。我们的团队将竭诚为您提供帮助。
+  </textarea>
+  <br>
+  <button class="btn" disabled>我已阅读(60秒)</button>
+  <script>
+    const btn = document.querySelector('.btn')
+    //button 是双元素表单，用innerhtml获取值
+    let i = 6
+    let n = setInterval(function () {
+      i--
+      btn.innerHTML = `我已阅读(${i}秒)`
+      if (i === 0) {
+        clearInterval(n)
+        btn.disabled = false
+        btn.innerHTML = '我同意'
+
+      }
+
+    }, 1000)
+  </script>
+</body>
+
+</html>

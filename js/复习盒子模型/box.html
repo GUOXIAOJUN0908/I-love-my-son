@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* 确保 padding 和 border 包含在元素的总宽度和高度内 */
+    }
+
+    .test {
+      width: 200px;
+      height: 100px;
+      background-color: pink;
+      padding: 20px;
+      /*当我们设置了盒子模型的时候，padding值不会影响盒子的尺寸，因此这里即使设置了，也没有什么意义
+      /* margin: 20px; */
+      border: solid 2px black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="test"></div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text">
+  <script>
+    const a = document.querySelector('input')
+    a.addEventListener('input', function () {
+      console.log('输入内容触发事件')
+      console.log(a.value)
+    })
+  </script>
+</body>
+
+</html>

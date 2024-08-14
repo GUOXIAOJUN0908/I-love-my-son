@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* 不会因为padding而撑大盒子的大小 */
+    }
+
+    .bread {
+      position: relative;
+      width: 223px;
+      margin: 50px auto;
+    }
+
+    .bread input {
+      width: 223px;
+      height: 48px;
+      /*当父盒子没有设定高度的时候，设置input的高度会撑大父盒子*/
+      padding: 0px 10px;
+      font-size: 16px;
+      line-height: 48px;
+      border: 1px solid #e0e0e0;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+
+    .bread .search {
+      border: 1px solid #ff6700;
+    }
+
+    /*当获取焦点的时候，可以用来添加这个类，从而让搜索框的颜色一起变成屎黄色*/
+
+    ul {
+      list-style: none;
+      /*可以去掉小li前面的小圆点*/
+    }
+
+    .bread_list {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 48px;
+      width: 223px;
+      border: 1px solid #ff6700;
+      border-top: 0;
+      background-color: #fff;
+
+    }
+
+    .bread_list a {
+      display: block;
+      padding: 6px 15px;
+      font-size: 12px;
+      color: #424242;
+      text-decoration: none;
+    }
+
+    .bread_list a:hover {
+      background-color: #eee;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bread">
+    <input type="search" placeholder="奶油面包" />
+    <ul class="bread_list">
+      <li><a href="#">日式吐司</a></li>
+      <li><a href="#">欧包</a></li>
+      <li><a href="#">甜甜圈</a></li>
+      <li><a href="#">牛角包</a></li>
+      <li><a href="#">红豆包</a></li>
+    </ul>
+    <script>
+      let content = document.querySelector('input')
+      let list = document.querySelector('.bread_list')
+      content.addEventListener('focus', function () {
+        console.log('光标点击表单')
+        list.style.display = 'block'
+        content.classList.add('search')
+      })
+
+      content.addEventListener('blur', function () {
+        console.log('光标离开表单')
+        list.style.display = 'none'
+      })
+    </script>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=scr, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      display: flex;
+      width: 700px;
+      height: 300px;
+      border-left: 1px solid pink;
+      border-bottom: 1px solid pink;
+      margin: 50px auto;
+      justify-content: space-around;
+      align-items: flex-end;
+      text-align: center;
+    }
+
+    .box>div {
+      display: flex;
+      width: 50px;
+      background-color: pink;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .box div span {
+      margin-top: -20px;
+    }
+
+    .box div h4 {
+      margin-bottom: -35px;
+      width: 70px;
+      margin-left: -10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    let arr = []
+    for (let i = 1; i <= 4; i++) {
+      arr.push(prompt(`请输入第${i}极季度的数： `))
+    }
+    // 开头
+    document.write(`<div class="box">`)
+    // 中间
+    for (let i = 0; i < arr.length; i++) {
+      document.write(`
+             <div style="height: ${arr[i]}px;">
+            <span>${arr[i]}</span>
+            <h4>第${i + 1}季度</h4>
+            </div>
+            `)
+
+    }
+    // 结尾
+    document.write(` </div>`)
+  </script>
+  // 原来我的代码少了一个let 真的是气死
+  <!-- <script>
+    arr = []
+    for (let i = 1; i <= 4; i++) {
+      num = prompt(`请输入${i}季度销售业绩:`)
+      arr.push[num]
+
+    }
+    document.write(`<div class="box">`)
+    for (let i = 0; i < arr.length; i++) {
+      document.write(`<div style="height: ${arr[i]}px;">
+      <span>${arr[i]}</span>
+      <h4>第${i}季度</h4>
+    </div>`)
+    }
+    document.write(`</div>`)
+  </script> -->
+</body>
+
+</html>
